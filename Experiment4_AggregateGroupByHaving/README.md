@@ -38,123 +38,156 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
+-- How many patients are there in each city?
 
 ```sql
--- Paste your SQL code below for Question 1
+-- select Address,count(*) as TotalPatients from Patients group by Address;
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/563fdfb0-c75a-48a4-9567-fcbf0226d731)
 
 **Question 2**
 ---
--- Paste Question 2 here
+-- How many medical records were created in each month?
 
 ```sql
--- Paste your SQL code below for Question 2
+-- SELECT Date,count(*) as TotalRecords from MedicalRecords group by Date;
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/273353b3-331f-4ec5-9499-4b3f4b4a471b)
 
 **Question 3**
 ---
--- Paste Question 3 here
+-- How many appointments are scheduled for each patient?
+
+Sample table: Appointments Table
+
+name                  type
+--------------------  ----------
+AppointmentID         INTEGER
+PatientID             INTEGER
+DoctorID              INTEGER
+AppointmentDateTime   DATETIME
+Purpose               TEXT
+Status                TEXT
 
 ```sql
--- Paste your SQL code below for Question 3
+-- SELECT PatientID,COUNT(*) AS TotalAppointments from Appointments group by PatientID;
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/ab14be11-eda9-4d04-a371-25530579aa34)
 
 **Question 4**
 ---
--- Paste Question 4 here
+-- Write a SQL query to find Who has the highest income among employee living in California?
+
+Table: employee
+
+name        type
+----------  ----------
+id          INTEGER
+name        TEXT
+age         INTEGER
+city        TEXT
+income      INTEGER
 
 ```sql
--- Paste your SQL code below for Question 4
+-- select name,max(income) as 'max(income)' from employee where city='California';
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/282175b2-68ef-41fe-984d-88ee5f16c669)
 
 **Question 5**
 ---
--- Paste Question 5 here
+-- Write a SQL query to find the number of employees whose age is greater than 32.
 
 ```sql
--- Paste your SQL code below for Question 5
+-- select count(*) as COUNT from employee where age>32;
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/c430cf54-401e-4678-9427-a528300c2c6d)
 
 **Question 6**
 ---
--- Paste Question 6 here
+-- Write a SQL query to find the number of employees who are having the same age removing the duplicate values.
 
 ```sql
--- Paste your SQL code below for Question 6
+-- select count(distinct age) as COUNT from employee;
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/f8b50084-3312-4b19-ac7b-e9a0c265f9b7)
 
 **Question 7**
 ---
--- Paste Question 7 here
+-- Write a SQL query to find the average length of email addresses (in characters):
+
+Table: customer
+
+name        type
+----------  ----------
+id          INTEGER
+name        TEXT
+city        TEXT
+email       TEXT
+phone       INTEGER
 
 ```sql
--- Paste your SQL code below for Question 7
+-- select avg(length(email)) as avg_email_length from customer;
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/0680d0a5-08d7-4140-b1ac-b8afea321822)
 
 **Question 8**
 ---
--- Paste Question 8 here
+-- Write the SQL query that accomplishes the selection of total number of products for each category from the "products" table, and includes only those products where the minimum category ID is less than 3.
 
 ```sql
--- Paste your SQL code below for Question 8
+-- select category_id,count(*) as 'count(product_name)' from products group by category_id having category_id<3;
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/c49823ee-b959-4736-9710-60e97450c619)
 
 **Question 9**
 ---
--- Paste Question 9 here
+-- Write the SQL query that achieves the grouping of data by age, calculates the minimum income for each age group, and includes only those age groups where the minimum income is less than 1,000,000.
 
 ```sql
--- Paste your SQL code below for Question 9
+-- select age,income as Income from employee group by age having min(income)<1000000;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/37c6c20e-ac7c-4c96-8b3d-f642b60eca78)
 
 **Question 10**
 ---
--- Paste Question 10 here
+-- Write the SQL query that accomplishes the selection of number of products for each category from products table which includes only those products where the category ID is greater than 2.
+
+
 
 ```sql
--- Paste your SQL code below for Question 10
+--select category_id,count(*) as 'COUNT' from products group by category_id having category_id>2;
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/58306407-bc19-4db2-abf9-214150f5b7a2)
 
 
 ## RESULT
